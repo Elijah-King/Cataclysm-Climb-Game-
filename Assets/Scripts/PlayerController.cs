@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] float groundCheckRadius = 0.2f;
     [SerializeField] LayerMask groundLayer;
+    SpriteRenderer spriteRenderer;
 
     bool isGrounded;
         
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -43,13 +45,30 @@ public class PlayerController : MonoBehaviour
 
         if (hit != null)
         {
-            UnityEngine.Debug.Log("Hit: " + hit.gameObject.name);
+           // UnityEngine.Debug.Log("Hit: " + hit.gameObject.name);
         }
         else
         {
-            UnityEngine.Debug.Log("Hit: null");
+           // UnityEngine.Debug.Log("Hit: null");
         }
 
+
+        if (moveInput.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (moveInput.x < 0)
+        {
+
+            spriteRenderer.flipX = true;
+        
+        }
+           
+    
+    
+    
+    
+    
     }
 
 
