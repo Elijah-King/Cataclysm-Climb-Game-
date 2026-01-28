@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - LadderEntry
+  - Throwable
+  - platEdge
   layers:
   - Default
   - TransparentFX
@@ -12,7 +15,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - FallingObject
   - 
   - 
   - 

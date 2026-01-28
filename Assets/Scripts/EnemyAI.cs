@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -21,6 +22,24 @@ public class EnemyAI : MonoBehaviour
 
     Rigidbody2D rb2d;
 
+
+    // variables for enemy only chasing you while on same platform
+
+    [SerializeField]
+    Tilemap platformTilemap;
+
+    [SerializeField]
+
+   private Grid grid;
+
+    
+    
+    Vector3Int GetTilePos(Transform target)
+    {
+        return grid.WorldToCell(target.position);
+    }
+    
+    
     
     
     
@@ -38,16 +57,23 @@ public class EnemyAI : MonoBehaviour
 
         // distance to player
         float distToPlayer = Vector2.Distance(transform.position, player.position);
-        Debug.Log("distToPlayer" + distToPlayer);
+
+        Vector3Int playerTile = GetTilePos(player);
+        Vector3Int enemyTile = GetTilePos(transform);
+
+        //Debug.Log("distToPlayer" + distToPlayer);
+
+        bool samePlatformRow = Mathf.Abs(playerTile.y - enemyTile.y) <= 0;
         
         
-        if(distToPlayer < agroRange)
+        if(distToPlayer < agroRange && samePlatformRow)
         {
             // code to chase player
+            
+                chasePlayer();
 
-            chasePlayer();
         }
-        else if(distToPlayer > agroRange)
+        else 
         {
             enemyPatrolling();
         }
@@ -111,4 +137,14 @@ public class EnemyAI : MonoBehaviour
             rb2d.linearVelocity = new Vector2(-moveSpeed, 0); // enemy is to the right of the player so move left 
         }  
     }
+
+
+
+
+
+
+
+
+
+
 }
