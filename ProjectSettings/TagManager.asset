@@ -8,6 +8,7 @@ TagManager:
   - LadderEntry
   - Throwable
   - platEdge
+  - IntroLevelEndTrigger
   layers:
   - Default
   - TransparentFX
