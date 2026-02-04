@@ -151,4 +151,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LadderScript
   climbSpeed: 3
-  col: {fileID: 7108028413017851420, guid: 2449bc5ad43bc724f98fc9e724ba4210, type: 3}
+  col: {fileID: 4050665864956963506}

@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 3afd1aa67c3ca124eaa6c1c4b1141a0e
+guid: 2c8a21cd49929de488f8e6888dca2430
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9199729183588196036
-    second: Consruct_0
-  - first:
-      213: 444878218924475096
-    second: Consruct_1
-  - first:
-      213: 8093178726631179795
-    second: Consruct_2
-  - first:
-      213: 6876760908584372271
-    second: Consruct_3
-  - first:
-      213: -5659365025726694272
-    second: Consruct_4
+      213: -7503402373696077091
+    second: PlayerAttack_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -138,111 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Consruct_0
+      name: PlayerAttack_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 144
-        width: 64
-        height: 80
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ce919143f00caf70800000000000000
-      internalID: 9199729183588196036
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Consruct_1
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 96
-        width: 283
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d24d4f02668c2600800000000000000
-      internalID: 444878218924475096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Consruct_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 32
-        height: 80
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 31689902c2fb05070800000000000000
-      internalID: 8093178726631179795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Consruct_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 48
+        x: 1
+        y: 0
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f28c6799c992f6f50800000000000000
-      internalID: 6876760908584372271
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Consruct_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 320
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 08c7a436e75e571b0800000000000000
-      internalID: -5659365025726694272
+      spriteID: dd2c50dbb4f8ed790800000000000000
+      internalID: -7503402373696077091
       vertices: []
       indices: 
       edges: []
@@ -251,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0bcbd6cbea7326d44a313d5c052cdbbb
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -259,15 +159,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Consruct_0: 9199729183588196036
-      Consruct_1: 444878218924475096
-      Consruct_2: 8093178726631179795
-      Consruct_3: 6876760908584372271
-      Consruct_4: -5659365025726694272
+      PlayerAttack_0: -7503402373696077091
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

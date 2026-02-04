@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour
     bool isGrounded;
 
     Animator walk;
-        
+
+    Animator Jump;
 
     
     
@@ -91,12 +92,16 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
 
-           
-
+            Jump.SetBool("isJumping", true);
+       
 
 
         }
 
+        if (isGrounded)
+        {
+            Jump.SetBool("isJumping", false);
+        }
 
 
     }
