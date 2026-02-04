@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     bool isGrounded;
+
+    Animator walk;
         
 
     
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        walk = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -63,9 +66,10 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = true;
         
         }
-           
-    
-    
+
+
+        bool isMoving = Mathf.Abs(moveInput.x) > 0.1f;
+        walk.SetBool("isRunning", isMoving);
     
     
     
@@ -75,6 +79,8 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext ctx)
     {
         moveInput = ctx.ReadValue<Vector2>();
+
+       
     }
 
 
