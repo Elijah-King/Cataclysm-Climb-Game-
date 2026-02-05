@@ -25,8 +25,18 @@ public class PlayerController : MonoBehaviour
 
     Animator Jump;
 
-    
-    
+    Animator Attack;
+
+    [SerializeField]
+    Transform attackPoint;
+
+    [SerializeField]
+    LayerMask enemyLayer;
+
+    [SerializeField]
+    float radius = 0.2f;
+
+
     Vector2 moveInput;
 
     
@@ -37,6 +47,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         walk = GetComponent<Animator>();
+        Jump = GetComponent<Animator>();
+        Attack = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -57,23 +69,33 @@ public class PlayerController : MonoBehaviour
         }
 
 
+      
+
+
         if (moveInput.x > 0)
         {
             spriteRenderer.flipX = false;
+            attackPoint.localPosition = new Vector3(Mathf.Abs(attackPoint.localPosition.x), attackPoint.localPosition.y, 0);
+
         }
         else if (moveInput.x < 0)
         {
 
             spriteRenderer.flipX = true;
-        
+          
+            attackPoint.localPosition = new Vector3(-Mathf.Abs(attackPoint.localPosition.x), attackPoint.localPosition.y, 0);
+
         }
 
 
         bool isMoving = Mathf.Abs(moveInput.x) > 0.1f;
         walk.SetBool("isRunning", isMoving);
-    
-    
-    
+
+        Jump.SetBool("isJumping", !isGrounded);
+
+       
+
+
     }
 
 
@@ -92,20 +114,76 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
 
+
             Jump.SetBool("isJumping", true);
-       
+
 
 
         }
 
-        if (isGrounded)
+    
+     
+
+
+    }
+
+    
+    
+   public void PlayerAttack(InputAction.CallbackContext ctx)
+    {
+
+        
+        if (ctx.performed)
         {
-            Jump.SetBool("isJumping", false);
+            
+            Attack.SetBool("isAttacking", true);
+            GiveDamage();
+        }
+        else
+        {
+            Attack.SetBool("isAttacking", false);
         }
 
 
     }
 
+    
+    
+    public void GiveDamage()
+    {
+
+   
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
+
+            attackPoint.position,
+            radius,
+            enemyLayer
+
+            );
+
+
+
+
+
+        foreach (Collider2D hit in hits)
+        {
+            EnemyHealth enemy = hit.GetComponent<EnemyHealth>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(20);
+            }
+        }
+
+
+    }
+    
+    
+    
+    
+    
+    
+    
     void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
@@ -116,7 +194,26 @@ public class PlayerController : MonoBehaviour
        
 
         }
+
+
+
+        if (attackPoint == null) return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, 0.5f); // same radius you use in OverlapCircle
+
+
+
     }
+
+
+
+
+    
+
+
+
+
 
 
 
