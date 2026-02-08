@@ -9,6 +9,7 @@ TagManager:
   - Throwable
   - platEdge
   - IntroLevelEndTrigger
+  - Despawner
   layers:
   - Default
   - TransparentFX

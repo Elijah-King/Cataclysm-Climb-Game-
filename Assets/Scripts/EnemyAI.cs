@@ -22,6 +22,8 @@ public class EnemyAI : MonoBehaviour
 
     Rigidbody2D rb2d;
 
+    private SpriteRenderer sr;
+
 
     // variables for enemy only chasing you while on same platform
 
@@ -31,6 +33,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
 
    private Grid grid;
+
+    Animator EnemyWalk;
 
     
     
@@ -48,13 +52,19 @@ public class EnemyAI : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb2d = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         currentPoint = pointA.transform;
+
+        EnemyWalk = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
+     
+        
+        
         // distance to player
         float distToPlayer = Vector2.Distance(transform.position, player.position);
 
@@ -80,21 +90,32 @@ public class EnemyAI : MonoBehaviour
 
 
 
+        bool enemyMoving = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
+
+        EnemyWalk.SetBool("enemyIsWalking", enemyMoving);
 
 
-      
+        if (rb.linearVelocity.x > 0.1f)
+        {
+            sr.flipX = false;   // facing right
+        }
+        else if (rb.linearVelocity.x < -0.1f)
+        {
+            sr.flipX = true;    // facing left
+        }
 
 
-     
+
+
 
 
     }
 
-    
-    
-    
-    
-    
+
+
+
+
+
     void enemyPatrolling()
     {
         Vector2 point = currentPoint.position - transform.position;
