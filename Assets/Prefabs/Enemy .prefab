@@ -189,6 +189,7 @@ MonoBehaviour:
   moveSpeed: 2
   platformTilemap: {fileID: 0}
   grid: {fileID: 0}
+  attackRange: 1.5
 --- !u!114 &7986876567027659371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   EnemymaxHealth: 100
   EnemyhealthBar: {fileID: 969023628450024737}
+  enemy: {fileID: 5364066032051899109}
 --- !u!95 &5511585794786334118
 Animator:
   serializedVersion: 7
