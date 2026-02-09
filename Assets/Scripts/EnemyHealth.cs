@@ -18,6 +18,8 @@ public class EnemyHealth : MonoBehaviour
 
     private Image EnemyhealthBar;
 
+    public GameObject enemy;
+
 
 
 
@@ -58,21 +60,20 @@ public class EnemyHealth : MonoBehaviour
     public void Death()
     {
 
-       
+
+        enemy.SetActive(false);
+        
+        
+        
         EnemyhealthBar.fillAmount = 0;
 
-        StartCoroutine(deathBuffer());
+       
         
     
     }
 
 
-    IEnumerator deathBuffer()
-    {
-        yield return new WaitForSeconds(4);
 
-        SceneManager.LoadScene(0);
-    }
 
 
 

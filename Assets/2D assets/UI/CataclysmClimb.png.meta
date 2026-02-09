@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 4f9ed16ff96f0f146af60fe40033e75a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2339835657500258920
+    second: CataclysmClimb_0
+  - first:
+      213: -6384919539530275470
+    second: CataclysmClimb_1
+  - first:
+      213: 5358575236766213579
+    second: CataclysmClimb_2
+  - first:
+      213: -7418109832937786768
+    second: CataclysmClimb_3
+  - first:
+      213: -3907699003325497019
+    second: CataclysmClimb_4
+  - first:
+      213: 3750298785581195930
+    second: CataclysmClimb_5
+  - first:
+      213: -6545884836235546033
+    second: CataclysmClimb_6
+  - first:
+      213: -1141519550084288855
+    second: CataclysmClimb_7
+  - first:
+      213: 633812291129375009
+    second: CataclysmClimb_8
+  - first:
+      213: 3980237590200125425
+    second: CataclysmClimb_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CataclysmClimb_0
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 586
+        width: 357
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862781e2224c87020800000000000000
+      internalID: 2339835657500258920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CataclysmClimb_1
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 626
+        width: 369
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 275e8dee1853467a0800000000000000
+      internalID: -6384919539530275470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CataclysmClimb_2
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 565
+        width: 898
+        height: 466
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc5a7a179cb7d5a40800000000000000
+      internalID: 5358575236766213579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CataclysmClimb_3
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 620
+        width: 231
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07239e6e8649d0990800000000000000
+      internalID: -7418109832937786768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CataclysmClimb_4
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 622
+        width: 1026
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541c2a9d57015c9c0800000000000000
+      internalID: -3907699003325497019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CataclysmClimb_5
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 33
+        width: 366
+        height: 528
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a92652420ecbb0430800000000000000
+      internalID: 3750298785581195930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CataclysmClimb_6
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 80
+        width: 233
+        height: 488
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f42709b4c685825a0800000000000000
+      internalID: -6545884836235546033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CataclysmClimb_7
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 78
+        width: 147
+        height: 488
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aeef0964028820f0800000000000000
+      internalID: -1141519550084288855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CataclysmClimb_8
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 84
+        width: 405
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 129fa03bbe0cbc800800000000000000
+      internalID: 633812291129375009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CataclysmClimb_9
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 88
+        width: 430
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f709850005ac3730800000000000000
+      internalID: 3980237590200125425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CataclysmClimb_0: 2339835657500258920
+      CataclysmClimb_1: -6384919539530275470
+      CataclysmClimb_2: 5358575236766213579
+      CataclysmClimb_3: -7418109832937786768
+      CataclysmClimb_4: -3907699003325497019
+      CataclysmClimb_5: 3750298785581195930
+      CataclysmClimb_6: -6545884836235546033
+      CataclysmClimb_7: -1141519550084288855
+      CataclysmClimb_8: 633812291129375009
+      CataclysmClimb_9: 3980237590200125425
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

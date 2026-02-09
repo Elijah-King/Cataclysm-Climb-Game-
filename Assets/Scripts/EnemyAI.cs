@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -24,6 +25,8 @@ public class EnemyAI : MonoBehaviour
 
     private SpriteRenderer sr;
 
+  
+
 
     // variables for enemy only chasing you while on same platform
 
@@ -36,8 +39,18 @@ public class EnemyAI : MonoBehaviour
 
     Animator EnemyWalk;
 
-    
-    
+
+
+    // variables below is for enemy attacking
+
+    bool isEnemyAttacking;
+
+    [SerializeField] float attackRange = 1.5f;
+
+    Animator enemyAttack;
+
+
+
     Vector3Int GetTilePos(Transform target)
     {
         return grid.WorldToCell(target.position);
@@ -62,6 +75,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
 
+       
      
         
         
@@ -90,7 +104,14 @@ public class EnemyAI : MonoBehaviour
 
 
 
-        bool enemyMoving = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
+
+
+    
+
+
+
+
+            bool enemyMoving = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
 
         EnemyWalk.SetBool("enemyIsWalking", enemyMoving);
 
@@ -162,8 +183,7 @@ public class EnemyAI : MonoBehaviour
 
 
 
-
-
+ 
 
 
 

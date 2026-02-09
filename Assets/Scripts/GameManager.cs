@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     {
         if (collision.CompareTag("IntroLevelEndTrigger"))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -19,7 +19,15 @@ public class GameManager : MonoBehaviour
 
 
 
+    public void playGame()
+    {
+        SceneManager.LoadScene(1);
+    }
 
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
 }
