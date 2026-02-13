@@ -637,6 +637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
   healthBar: {fileID: 4607381215587874782}
+  DeathPopup: {fileID: 0}
 --- !u!114 &3188462924873986936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,6 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bafa78acfbe23f4bbf0cf4342b64ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  EndLevelPopUp: {fileID: 0}
 --- !u!95 &1061247153650250043
 Animator:
   serializedVersion: 7

@@ -1,3 +1,6 @@
+using JetBrains.Annotations;
+using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,13 +18,32 @@ public class GameManager : MonoBehaviour
     {
         if (collision.CompareTag("IntroLevelEndTrigger"))
         {
+
+
+            var LevelEnd = collision.GetComponent<EndLevelScript>();
+
             EndLevelPopUp.SetActive(true);
+
+
+            if (LevelEnd != null)
+            {
+                StartCoroutine(VictoryBuffer(LevelEnd.GetSceneToLoad()));
+            }
+           
             
-            SceneManager.LoadScene(2);
         }
     }
 
 
+
+    IEnumerator VictoryBuffer(int sceneIndex)
+    {
+        yield return new WaitForSeconds(4);
+
+      
+
+        SceneManager.LoadScene(sceneIndex);
+    }
 
 
 
