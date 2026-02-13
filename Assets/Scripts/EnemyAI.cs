@@ -87,7 +87,7 @@ public class EnemyAI : MonoBehaviour
 
         //Debug.Log("distToPlayer" + distToPlayer);
 
-        bool samePlatformRow = Mathf.Abs(playerTile.y - enemyTile.y) <= 0;
+        bool samePlatformRow = Mathf.Abs(playerTile.y - enemyTile.y) <= 1;
         
         
         if(distToPlayer < agroRange && samePlatformRow)

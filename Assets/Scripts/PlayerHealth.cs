@@ -1,3 +1,4 @@
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +21,9 @@ public class PlayerHealth : MonoBehaviour
 
 
 
+    public GameObject DeathPopup;
+
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,6 +31,8 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         UpdateHealthBar();
+   
+
     }
 
  
@@ -61,6 +67,8 @@ public class PlayerHealth : MonoBehaviour
        
         healthBar.fillAmount = 0;
 
+        DeathPopup.SetActive(true);
+
         StartCoroutine(deathBuffer());
         
     
@@ -71,8 +79,46 @@ public class PlayerHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
 
-        SceneManager.LoadScene(0);
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        SceneManager.LoadScene(currentScene.buildIndex, LoadSceneMode.Single);
     }
+
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision) // for when an object hits the player the player dies
+    {
+        if (collision.CompareTag("Throwable"))
+        {
+
+            var controller = GetComponent<PlayerController>();
+
+            var objMovement = collision.GetComponentInParent<ObjectLadderRoll>();
+      
+         
+
+            if(controller != null && objMovement != null)
+            {
+
+                objMovement.enabled = false;
+                controller.enabled = false; // players movement stops
+                
+                
+                Death();
+            }
+            
+            
+          
+
+
+        }
+    }
+
+
+
+
+
 
 
 
