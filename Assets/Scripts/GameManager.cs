@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject EndLevelPopUp;
 
 
+   
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,9 +31,28 @@ public class GameManager : MonoBehaviour
             {
                 StartCoroutine(VictoryBuffer(LevelEnd.GetSceneToLoad()));
             }
-           
-            
+
+
+
+
+     
+        
+        
+        
+        
+        
+        
         }
+
+
+
+    
+    
+    
+    
+    
+    
+    
     }
 
 

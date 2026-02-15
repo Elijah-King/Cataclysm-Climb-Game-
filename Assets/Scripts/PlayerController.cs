@@ -39,8 +39,13 @@ public class PlayerController : MonoBehaviour
 
     Vector2 moveInput;
 
-    
-    
+
+    [SerializeField] float playerAttackCooldown = 1f;
+    float nextAttackTime;
+
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -133,13 +138,15 @@ public class PlayerController : MonoBehaviour
     {
 
         
-        if (ctx.performed)
+        if (ctx.performed && Time.time >= nextAttackTime)
         {
             
             Attack.SetBool("isAttacking", true);
             GiveDamage();
+
+            nextAttackTime = Time.time + playerAttackCooldown;
         }
-        else
+        else if(ctx.canceled)
         {
             Attack.SetBool("isAttacking", false);
         }
