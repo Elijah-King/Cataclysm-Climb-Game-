@@ -1,4 +1,5 @@
 
+using System.ComponentModel.Design.Serialization;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem; 
@@ -16,6 +17,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float velPower = 1.2f;
 
     [SerializeField] float jumpSpeed = 5f;
+
+
+
+    [SerializeField] float gravityMultiplier = 2f;
+
 
 
     
@@ -131,6 +137,20 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(movement * Vector2.right);
 
+    
+    
+    
+    
+    // Code for jumping 
+
+        if(rb.linearVelocity.y < 0)
+        {
+            rb.AddForce(Vector2.down * gravityMultiplier, ForceMode2D.Force);
+        }    
+    
+    
+    
+    
     
     }
 
