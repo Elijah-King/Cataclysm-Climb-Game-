@@ -5,11 +5,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    // Variables for movment 
 
-    [SerializeField]
-    float moveSpeed = 5.0f;
+    [SerializeField] float moveSpeed = 5.0f;
 
-    float jumpSpeed = 5f;
+    [SerializeField] float acceleration = 10.0f;
+
+    [SerializeField] float decceleration = 8f;
+
+    [SerializeField] float velPower = 1.2f;
+
+    [SerializeField] float jumpSpeed = 5f;
+
+
     
     
     public Rigidbody2D rb;
@@ -21,12 +29,16 @@ public class PlayerController : MonoBehaviour
 
     bool isGrounded;
 
+    
     Animator walk;
 
     Animator Jump;
 
     Animator Attack;
 
+   
+    
+    
     [SerializeField]
     Transform attackPoint;
 
@@ -59,22 +71,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y); // New x vector value is as shown but y stays the same
-
+        
+        
+        
         Collider2D hit = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         isGrounded = hit != null;
 
-        if (hit != null)
-        {
-           // UnityEngine.Debug.Log("Hit: " + hit.gameObject.name);
-        }
-        else
-        {
-           // UnityEngine.Debug.Log("Hit: null");
-        }
-
-
-      
 
 
         if (moveInput.x > 0)
@@ -107,9 +109,43 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext ctx)
     {
         moveInput = ctx.ReadValue<Vector2>();
-
-       
+    
     }
+
+
+
+
+
+    private void FixedUpdate()
+    {
+        float targetSpeed = moveInput.x * moveSpeed;
+
+
+        float speedDif = targetSpeed - rb.linearVelocity.x;
+
+        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : decceleration;
+
+        float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelRate, velPower) * Mathf.Sign(speedDif);
+
+
+
+        rb.AddForce(movement * Vector2.right);
+
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

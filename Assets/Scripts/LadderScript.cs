@@ -11,6 +11,8 @@ public class LadderScript : MonoBehaviour
 
     private float verticalInput;
 
+    private float horizontalInput;
+
     public BoxCollider2D col;
 
 
@@ -37,6 +39,8 @@ public class LadderScript : MonoBehaviour
         {
             verticalInput = playerInput.actions["Move"].ReadValue<Vector2>().y;
 
+         
+
           
 
             // Override gravity while climbing
@@ -44,9 +48,15 @@ public class LadderScript : MonoBehaviour
 
             // Move vertically
             playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, verticalInput * climbSpeed);
+
+
+
+
         }
 
-     
+
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

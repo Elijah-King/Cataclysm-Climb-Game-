@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 2b356a370f4d53d4d91411dbd2f666e7
+guid: c6fed4cdfb2dbde4c98836a3c20ddf81
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8568042794190644651
-    second: barrel_0
+      213: 1800694523412081416
+    second: Guy Ladder (Up and Down)_0
+  - first:
+      213: -6689485364445774467
+    second: Guy Ladder (Up and Down)_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +103,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: barrel_0
+      name: Guy Ladder (Up and Down)_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
+        y: 1
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80be7f8e02a5df810800000000000000
+      internalID: 1800694523412081416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guy Ladder (Up and Down)_1
+      rect:
+        serializedVersion: 2
+        x: 18
         y: 0
-        width: 16
+        width: 12
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 55adbef5972381980800000000000000
-      internalID: -8568042794190644651
+      spriteID: d7df802e08c2a23a0800000000000000
+      internalID: -6689485364445774467
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      barrel_0: -8568042794190644651
+      Guy Ladder (Up and Down)_0: 1800694523412081416
+      Guy Ladder (Up and Down)_1: -6689485364445774467
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

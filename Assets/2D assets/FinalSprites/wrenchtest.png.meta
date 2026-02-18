@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5394a9a668f92c6449c52633169c82cd
+guid: 37e29526ebd870546a5695877a289f14
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2955343401980655689
-    second: BowlingBall_0
+      213: -3598539603380740498
+    second: wrenchtest_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BowlingBall_0
+      name: wrenchtest_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 16
+        width: 14
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 948f9508a2d730920800000000000000
-      internalID: 2955343401980655689
+      spriteID: e6ed05eeb4b6f0ec0800000000000000
+      internalID: -3598539603380740498
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BowlingBall_0: 2955343401980655689
+      wrenchtest_0: -3598539603380740498
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
