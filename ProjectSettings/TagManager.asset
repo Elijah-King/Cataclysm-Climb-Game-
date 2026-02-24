@@ -11,6 +11,7 @@ TagManager:
   - IntroLevelEndTrigger
   - Despawner
   - EndAlpha
+  - ScoreTrigger
   layers:
   - Default
   - TransparentFX

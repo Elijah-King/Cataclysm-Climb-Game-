@@ -12,7 +12,21 @@ public class GameManager : MonoBehaviour
 
     public GameObject EndLevelPopUp;
 
+    [SerializeField] GameObject ScoreCard;
 
+
+
+    public PlayerScoreScript playerscoreBonusPopup;
+
+    public AudioSource ScoreCardSource;
+
+    public AudioClip ScoreCardStamp;
+
+
+    public ScoreCardScript scoreCardScript;
+
+
+    
    
 
 
@@ -24,12 +38,32 @@ public class GameManager : MonoBehaviour
 
             var LevelEnd = collision.GetComponent<EndLevelScript>();
 
+            int FinalScore = playerscoreBonusPopup.FinalScore;
+
+            int ScorePossible = playerscoreBonusPopup.scorePossible;
+
+
             EndLevelPopUp.SetActive(true);
+
+
+            StartCoroutine("VictoryPopup");
+
+
+
+       
+
+
 
 
             if (LevelEnd != null)
             {
-                StartCoroutine(VictoryBuffer(LevelEnd.GetSceneToLoad()));
+
+
+            
+                
+                
+                
+                // StartCoroutine(VictoryBuffer(LevelEnd.GetSceneToLoad()));
             }
 
 
@@ -54,6 +88,41 @@ public class GameManager : MonoBehaviour
     
     
     }
+
+
+
+    IEnumerator VictoryPopup()
+    {
+
+        yield return new WaitForSeconds(5);
+
+        EndLevelPopUp.SetActive(false);
+        
+        
+        ScoreCard.SetActive(true);
+
+        ScoreCardSource.PlayOneShot(ScoreCardStamp);
+
+
+
+
+
+           // Check score AFTER the score card appears
+         if (playerscoreBonusPopup.FinalScore == playerscoreBonusPopup.scorePossible)
+          {
+                StartCoroutine(playerscoreBonusPopup.BonusCountdown());
+          
+
+
+        }
+
+
+
+    }
+
+
+
+
 
 
 
