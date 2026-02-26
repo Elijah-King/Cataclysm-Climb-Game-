@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public ScoreCardScript scoreCardScript;
 
+    public EndLevelScript endlevelScript;
+
 
     
    
@@ -48,30 +50,6 @@ public class GameManager : MonoBehaviour
 
             StartCoroutine("VictoryPopup");
 
-
-
-       
-
-
-
-
-            if (LevelEnd != null)
-            {
-
-
-            
-                
-                
-                
-                // StartCoroutine(VictoryBuffer(LevelEnd.GetSceneToLoad()));
-            }
-
-
-
-
-     
-        
-        
         
         
         
@@ -101,14 +79,16 @@ public class GameManager : MonoBehaviour
         
         ScoreCard.SetActive(true);
 
+    
+
         ScoreCardSource.PlayOneShot(ScoreCardStamp);
 
+        scoreCardScript.OnScoreCardShow();
 
 
 
-
-           // Check score AFTER the score card appears
-         if (playerscoreBonusPopup.FinalScore == playerscoreBonusPopup.scorePossible)
+        // Check score AFTER the score card appears
+        if (playerscoreBonusPopup.FinalScore == playerscoreBonusPopup.scorePossible)
           {
                 StartCoroutine(playerscoreBonusPopup.BonusCountdown());
           
@@ -137,6 +117,20 @@ public class GameManager : MonoBehaviour
 
 
 
+
+
+    public void StartVictoryBuffer()
+    {
+        var levelEnd = endlevelScript.GetComponent<EndLevelScript>();
+        int sceneIndex = endlevelScript.GetSceneToLoad();
+        StartCoroutine(VictoryBuffer(sceneIndex));
+    }
+
+
+
+
+
+
     public void playGame()
     {
         SceneManager.LoadScene(1);
@@ -147,5 +141,16 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+
+
+
+
+
+
+
+
+
+
 
 }

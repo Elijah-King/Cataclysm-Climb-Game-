@@ -9,10 +9,12 @@ public class ScoreCardScript : MonoBehaviour
 
     [SerializeField] TMP_Text yourScore;
     //[SerializeField] TMP_Text yourTime;
-   // [SerializeField] TMP_Text yourDeaths;
+    // [SerializeField] TMP_Text yourDeaths;
 
 
-    [SerializeField]PlayerScoreScript playerScore;
+    [SerializeField] PlayerScoreScript playerScore;
+
+    public GameManager gameManager;
 
 
 
@@ -28,13 +30,13 @@ public class ScoreCardScript : MonoBehaviour
 
     [SerializeField] float CountSpeed = 0.025f;
 
-  private void OnEnable()
+    private void OnEnable()
     {
 
 
         yourScore.text = $"Your Score: {playerScore.FinalScore}";
 
-        
+
     }
 
 
@@ -47,11 +49,11 @@ public class ScoreCardScript : MonoBehaviour
 
     private IEnumerator StartCountUpWithDelay(float CountSpeed)
     {
-        
+
         BonusScore.gameObject.SetActive(false);
 
-     
-     
+
+
 
         yield return new WaitForSeconds(1f);
 
@@ -74,9 +76,9 @@ public class ScoreCardScript : MonoBehaviour
 
     public IEnumerator CountUpRoutine(int targetScore, float CountSpeed)
     {
-        
-        
-        
+
+
+
         int currentScoreCount = 0;
 
         BonusScore.text = "0";
@@ -87,7 +89,7 @@ public class ScoreCardScript : MonoBehaviour
             BonusScore.text = currentScoreCount.ToString();
 
             yield return new WaitForSeconds(CountSpeed);
-        
+
         }
 
 
@@ -98,9 +100,46 @@ public class ScoreCardScript : MonoBehaviour
 
         yourScore.text = $"Your Score: {playerScoreScript.FinalScore}";
 
+        gameManager.StartVictoryBuffer();
 
 
     }
+
+
+
+
+    public void OnScoreCardShow()
+    {
+        if (playerScore.FinalScore == playerScore.scorePossible)
+        {
+            return;
+        }
+        else
+        {
+            gameManager.StartVictoryBuffer();
+        }
+
+
+
+
+
+
+         
+                
+                
+                
+                
+                
+    }
+
+
+
+
+
+
+
+
+
 
 
 
