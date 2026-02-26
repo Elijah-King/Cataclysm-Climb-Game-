@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5738589449630166218}
   - component: {fileID: 8429553349688487040}
   - component: {fileID: 5483064202125856867}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 507958413965519969}
   - component: {fileID: 5035619605314355867}
   - component: {fileID: 334419203153238639}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3455742339603484883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HitCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 3475466770469213361}
   - component: {fileID: 1654448947471945548}
   - component: {fileID: 4607381215587874782}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,9 @@ GameObject:
   - component: {fileID: 4831137837721092580}
   - component: {fileID: 3188462924873986936}
   - component: {fileID: 1061247153650250043}
-  m_Layer: 0
+  - component: {fileID: 2620390697144747254}
+  - component: {fileID: 4853683194822562469}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -411,7 +413,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a639ccd0e24d746be65e57aef7d741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
+  moveSpeed: 7
+  acceleration: 5
+  decceleration: 10
+  velPower: 1.2
+  jumpSpeed: 5
+  gravityMultiplier: 25
   rb: {fileID: 4377586646981816382}
   groundCheck: {fileID: 2987796898115741570}
   groundCheckRadius: 0.1
@@ -422,7 +429,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  radius: 0.5
+  radius: 0.1
+  playerAttackCooldown: 1
 --- !u!114 &6293696266692276348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,6 +646,7 @@ MonoBehaviour:
   maxHealth: 100
   healthBar: {fileID: 4607381215587874782}
   DeathPopup: {fileID: 0}
+  playerScoreScript: {fileID: 0}
 --- !u!114 &3188462924873986936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,6 +660,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   EndLevelPopUp: {fileID: 0}
+  ScoreCard: {fileID: 0}
+  playerscoreBonusPopup: {fileID: 2620390697144747254}
+  ScoreCardSource: {fileID: 0}
+  ScoreCardStamp: {fileID: 8300000, guid: 39a1ca913de54e14ea5d6124ac690064, type: 3}
+  scoreCardScript: {fileID: 0}
+  endlevelScript: {fileID: 0}
 --- !u!95 &1061247153650250043
 Animator:
   serializedVersion: 7
@@ -673,6 +688,123 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2620390697144747254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771160591290734140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213e4f9506d89bb4db46bda81a9a2490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerScoreScript
+  FinalScore: 0
+  BonusScore: 100
+  LevelDeaths: 0
+  ScoreTriggersInLevel: 6
+  scorePossible: 0
+  scoreCard: {fileID: 0}
+  BonusSource: {fileID: 4853683194822562469}
+  PlayBonusPopupSound: {fileID: 8300000, guid: ae293f46a11f249419082d8769210580, type: 3}
+--- !u!82 &4853683194822562469
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771160591290734140}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8375708172585747999
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +814,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2987796898115741570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}

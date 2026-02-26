@@ -30,11 +30,24 @@ public class ScoreCardScript : MonoBehaviour
 
     [SerializeField] float CountSpeed = 0.025f;
 
+    public static ScoreCardScript Instance;
+
+
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+
+
+
     private void OnEnable()
     {
 
 
-        yourScore.text = $"Your Score: {playerScore.FinalScore}";
+        yourScore.text = $"Your Score: {playerScoreScript.FinalScore}";
 
 
     }
@@ -97,6 +110,8 @@ public class ScoreCardScript : MonoBehaviour
         ScoreCardAudio.Stop();
 
         playerScoreScript.FinalScore += targetScore;
+
+        GameDataManager.Instance.AddScore(targetScore);
 
         yourScore.text = $"Your Score: {playerScoreScript.FinalScore}";
 

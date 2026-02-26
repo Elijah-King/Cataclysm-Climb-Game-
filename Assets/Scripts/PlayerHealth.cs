@@ -23,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject DeathPopup;
 
+    public PlayerScoreScript playerScoreScript;
+
 
 
 
@@ -31,6 +33,8 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         UpdateHealthBar();
+
+       
    
 
     }
@@ -70,7 +74,11 @@ public class PlayerHealth : MonoBehaviour
         DeathPopup.SetActive(true);
 
         StartCoroutine(deathBuffer());
-        
+
+      playerScoreScript.LevelDeaths++;
+
+        GameDataManager.Instance.TotalScore = 0;
+   
     
     }
 

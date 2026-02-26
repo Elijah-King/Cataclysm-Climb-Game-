@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     public ScoreCardScript scoreCardScript;
 
-    public EndLevelScript endlevelScript;
+    private EndLevelScript endlevelScript;
 
 
     
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         {
 
 
-            var LevelEnd = collision.GetComponent<EndLevelScript>();
+            endlevelScript = collision.GetComponent<EndLevelScript>();
 
             int FinalScore = playerscoreBonusPopup.FinalScore;
 
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
 
 
         // Check score AFTER the score card appears
-        if (playerscoreBonusPopup.FinalScore == playerscoreBonusPopup.scorePossible)
+        if (playerscoreBonusPopup.FinalScore >= playerscoreBonusPopup.scorePossible)
           {
                 StartCoroutine(playerscoreBonusPopup.BonusCountdown());
           
@@ -110,9 +110,11 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
 
-      
 
+        GameDataManager.Instance.AddLevelDeaths(playerscoreBonusPopup.LevelDeaths);
+        
         SceneManager.LoadScene(sceneIndex);
+
     }
 
 
@@ -124,6 +126,7 @@ public class GameManager : MonoBehaviour
         var levelEnd = endlevelScript.GetComponent<EndLevelScript>();
         int sceneIndex = endlevelScript.GetSceneToLoad();
         StartCoroutine(VictoryBuffer(sceneIndex));
+
     }
 
 

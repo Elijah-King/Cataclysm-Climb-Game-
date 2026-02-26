@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerScoreScript : MonoBehaviour
@@ -9,6 +10,8 @@ public class PlayerScoreScript : MonoBehaviour
     public int FinalScore; // Score player will have at end of level
 
     public int BonusScore = 100;
+
+    public int LevelDeaths = 0;
 
     [SerializeField] int ScoreTriggersInLevel; // amount of score triggers in the level
 
@@ -24,6 +27,12 @@ public class PlayerScoreScript : MonoBehaviour
     public AudioClip PlayBonusPopupSound;
 
 
+
+
+
+
+
+
     private void Start()
     {
         scorePossible = ScoreTriggersInLevel * 10;
@@ -37,9 +46,6 @@ public class PlayerScoreScript : MonoBehaviour
 
 
 
-  
-
-
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,6 +53,7 @@ public class PlayerScoreScript : MonoBehaviour
         if(collision.CompareTag("ScoreTrigger"))
         {
             FinalScore += 10;
+            GameDataManager.Instance.AddScore(10);
 
 
 
