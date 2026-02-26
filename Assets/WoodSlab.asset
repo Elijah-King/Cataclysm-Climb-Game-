@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: WoodSlab_0
+  m_Name: WoodSlab
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: 9149372373675766382, guid: 7274632d2602ca843a83169c00b40b76, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8dce3187a50419b4c83c529955986ec2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

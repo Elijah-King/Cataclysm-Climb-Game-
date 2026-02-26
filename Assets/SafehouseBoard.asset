@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: WoodBoard_0
+  m_Name: SafehouseBoard
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: -1402368303832172998, guid: 59f8ae1d8b4e7ef4a8f406712d5b00de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47a2c89730e44f34697b882052bb7d93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

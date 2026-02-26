@@ -8,6 +8,8 @@ public class PlayerScoreScript : MonoBehaviour
 
     public int FinalScore; // Score player will have at end of level
 
+    public int BonusScore = 100;
+
     [SerializeField] int ScoreTriggersInLevel; // amount of score triggers in the level
 
 

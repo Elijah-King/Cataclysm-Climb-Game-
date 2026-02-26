@@ -21,8 +21,12 @@ public class ScoreCardScript : MonoBehaviour
 
     public PlayerScoreScript playerScoreScript;
 
+    public AudioSource ScoreCardAudio;
 
-    [SerializeField] float CountSpeed = 0.9f;
+    public AudioClip CountUpSound;
+
+
+    [SerializeField] float CountSpeed = 0.025f;
 
   private void OnEnable()
     {
@@ -55,8 +59,12 @@ public class ScoreCardScript : MonoBehaviour
         BonusScore.text = "0";
         BonusScore.gameObject.SetActive(true);
 
+        ScoreCardAudio.clip = CountUpSound;
+        ScoreCardAudio.loop = true;
+        ScoreCardAudio.Play();
 
-        int targetScore = playerScoreScript.FinalScore;
+
+        int targetScore = playerScoreScript.BonusScore;
         StartCoroutine(CountUpRoutine(targetScore, CountSpeed));
     }
 
@@ -82,8 +90,13 @@ public class ScoreCardScript : MonoBehaviour
         
         }
 
-       
 
+
+        ScoreCardAudio.Stop();
+
+        playerScoreScript.FinalScore += targetScore;
+
+        yourScore.text = $"Your Score: {playerScoreScript.FinalScore}";
 
 
 
