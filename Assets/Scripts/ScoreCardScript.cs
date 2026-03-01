@@ -45,9 +45,9 @@ public class ScoreCardScript : MonoBehaviour
 
     private void OnEnable()
     {
+        int ContinuousTotal = GameDataManager.Instance.TotalScore;
 
-
-        yourScore.text = $"Your Score: {playerScoreScript.FinalScore}";
+        yourScore.text = $"Your Score: {ContinuousTotal}";
 
 
     }
