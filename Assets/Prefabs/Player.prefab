@@ -646,7 +646,8 @@ MonoBehaviour:
   maxHealth: 100
   healthBar: {fileID: 4607381215587874782}
   DeathPopup: {fileID: 0}
-  playerScoreScript: {fileID: 0}
+  playerScoreScript: {fileID: 2620390697144747254}
+  anim: {fileID: 1061247153650250043}
 --- !u!114 &3188462924873986936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,7 +666,6 @@ MonoBehaviour:
   ScoreCardSource: {fileID: 0}
   ScoreCardStamp: {fileID: 8300000, guid: 39a1ca913de54e14ea5d6124ac690064, type: 3}
   scoreCardScript: {fileID: 0}
-  endlevelScript: {fileID: 0}
 --- !u!95 &1061247153650250043
 Animator:
   serializedVersion: 7

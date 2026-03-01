@@ -134,6 +134,17 @@ public class GameManager : MonoBehaviour
 
 
 
+
+    
+
+
+
+
+
+
+
+
+
     public void playGame()
     {
         SceneManager.LoadScene(1);

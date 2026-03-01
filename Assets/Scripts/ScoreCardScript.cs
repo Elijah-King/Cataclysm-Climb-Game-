@@ -113,7 +113,7 @@ public class ScoreCardScript : MonoBehaviour
 
         GameDataManager.Instance.AddScore(targetScore);
 
-        yourScore.text = $"Your Score: {playerScoreScript.FinalScore}";
+        yourScore.text = $"Your Score: {GameDataManager.Instance.TotalScore}";
 
         gameManager.StartVictoryBuffer();
 
@@ -123,30 +123,18 @@ public class ScoreCardScript : MonoBehaviour
 
 
 
+
+
     public void OnScoreCardShow()
     {
-        if (playerScore.FinalScore == playerScore.scorePossible)
+        // If player got a perfect score, BonusCountdown() will run
+        if (playerScore.FinalScore >= playerScore.scorePossible)
         {
-            return;
-        }
-        else
-        {
-            gameManager.StartVictoryBuffer();
+            return; // BonusCountdown will handle scene switching
         }
 
-
-
-
-
-
-         
-                
-                
-                
-                
-                
+        gameManager.StartVictoryBuffer();
     }
-
 
 
 

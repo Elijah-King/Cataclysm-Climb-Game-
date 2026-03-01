@@ -26,7 +26,9 @@ public class PlayerHealth : MonoBehaviour
     public PlayerScoreScript playerScoreScript;
 
 
+    public Animator anim;
 
+  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -67,9 +69,20 @@ public class PlayerHealth : MonoBehaviour
 
     public void Death()
     {
-
+       
        
         healthBar.fillAmount = 0;
+
+
+        //anim.SetTrigger("isDead");
+
+     
+
+
+
+
+
+
 
         DeathPopup.SetActive(true);
 
