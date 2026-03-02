@@ -9,6 +9,8 @@ public class TopEnemyThrower : MonoBehaviour
 
     private GameObject heldObject;
 
+    public Animator anim;
+
     void Start()
     {
         StartCoroutine(ThrowLoop());
@@ -25,7 +27,14 @@ public class TopEnemyThrower : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
 
+            anim.SetTrigger("isPushing");
+
+
             ThrowObject();
+
+        
+
+
         }
     }
 

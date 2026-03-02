@@ -12,6 +12,7 @@ TagManager:
   - Despawner
   - EndAlpha
   - ScoreTrigger
+  - Survivor
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - FallingObject
   - Enemy
   - Player
-  - 
+  - Survivor
   - 
   - 
   - 
@@ -48,6 +49,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 2035537633
     locked: 0
   m_RenderingLayers:
   - Default

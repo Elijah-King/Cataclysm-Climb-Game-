@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: e0744e41c7b831747bb6d412b2723b21
+guid: 762925e6f273072429fe7cd63d90fa7a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5775605599678879682
-    second: Survivor_0
+      213: 403208247147482157
+    second: Flame_0
   - first:
-      213: 1477727864931859644
-    second: Survivor_1
+      213: -376618679879410969
+    second: Flame_1
   - first:
-      213: -8409859510138960945
-    second: Survivor_2
+      213: 8380166570636649795
+    second: Flame_2
+  - first:
+      213: 7903980933308901794
+    second: Flame_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -102,43 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Survivor_0
+      name: Flame_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 16
-        height: 16
+        width: 12
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c7dd9341b2172050800000000000000
-      internalID: 5775605599678879682
+      spriteID: d2ccbb5b3cb789500800000000000000
+      internalID: 403208247147482157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Survivor_1
+      name: Flame_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 18
         y: 0
-        width: 16
-        height: 16
+        width: 12
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cbcb5ffe9a1f18410800000000000000
-      internalID: 1477727864931859644
+      spriteID: 7ead20a5e4bf5caf0800000000000000
+      internalID: -376618679879410969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Survivor_2
+      name: Flame_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 0
-        width: 16
-        height: 11
+        width: 12
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,8 +168,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc30a37355d2a4b80800000000000000
-      internalID: -8409859510138960945
+      spriteID: 345a66198155c4470800000000000000
+      internalID: 8380166570636649795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9665128c490bd60800000000000000
+      internalID: 7903980933308901794
       vertices: []
       indices: 
       edges: []
@@ -211,9 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Survivor_0: 5775605599678879682
-      Survivor_1: 1477727864931859644
-      Survivor_2: -8409859510138960945
+      Flame_0: 403208247147482157
+      Flame_1: -376618679879410969
+      Flame_2: 8380166570636649795
+      Flame_3: 7903980933308901794
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
