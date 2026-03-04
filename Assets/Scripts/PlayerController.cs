@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     LayerMask enemyLayer;
 
+
+    private bool hasHit = false;
+
     [SerializeField]
     float radius = 0.2f;
 
@@ -149,16 +152,12 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerAttack(InputAction.CallbackContext ctx)
     {
-        if (isFrozen)
-        {
-            return;
-        }
+        if (isFrozen) return;
 
         if (ctx.performed && Time.time >= nextAttackTime)
         {
             Attack.SetBool("isAttacking", true);
-            GiveDamage();
-
+            hasHit = false; // reset hit flag
             nextAttackTime = Time.time + playerAttackCooldown;
         }
         else if (ctx.canceled)
@@ -167,8 +166,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     public void GiveDamage()
     {
+
+        if (hasHit)
+        {
+            return;
+        }
+        
         Collider2D[] hits = Physics2D.OverlapCircleAll(
             attackPoint.position,
             radius,
@@ -180,7 +186,9 @@ public class PlayerController : MonoBehaviour
             EnemyHealth enemy = hit.GetComponent<EnemyHealth>();
             if (enemy != null)
             {
-                enemy.TakeDamage(20);
+                enemy.TakeDamage(50);
+                hasHit = true;
+                break;
             }
         }
     }

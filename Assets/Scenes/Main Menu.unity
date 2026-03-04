@@ -516,11 +516,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 372237751}
-  m_Father: {fileID: 1456550683}
+  m_Father: {fileID: 1493214337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.799986, y: -44.29999}
+  m_AnchoredPosition: {x: -247.3, y: -60.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &931181338
@@ -635,6 +635,7 @@ MonoBehaviour:
   ScoreCardSource: {fileID: 0}
   ScoreCardStamp: {fileID: 0}
   scoreCardScript: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1305566805
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +904,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 14313044}
-  - {fileID: 931181337}
   m_Father: {fileID: 1493214337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1023,6 +1023,7 @@ MonoBehaviour:
   ScoreCardSource: {fileID: 0}
   ScoreCardStamp: {fileID: 0}
   scoreCardScript: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1493214333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1120,7 @@ RectTransform:
   m_Children:
   - {fileID: 1456550683}
   - {fileID: 37677157}
+  - {fileID: 931181337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

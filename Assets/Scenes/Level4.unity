@@ -17150,6 +17150,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7685416207999944239, guid: 94d88105e8b9c0146a7eb2c5afb7fb1e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9007895618497953056, guid: 94d88105e8b9c0146a7eb2c5afb7fb1e, type: 3}
       propertyPath: m_IsActive
       value: 0

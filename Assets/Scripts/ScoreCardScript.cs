@@ -27,6 +27,8 @@ public class ScoreCardScript : MonoBehaviour
 
     public AudioClip CountUpSound;
 
+    public AudioClip Boom;
+
 
     [SerializeField] float CountSpeed = 0.025f;
 
@@ -108,6 +110,7 @@ public class ScoreCardScript : MonoBehaviour
 
 
         ScoreCardAudio.Stop();
+        ScoreCardAudio.PlayOneShot(Boom);
 
         playerScoreScript.FinalScore += targetScore;
 
