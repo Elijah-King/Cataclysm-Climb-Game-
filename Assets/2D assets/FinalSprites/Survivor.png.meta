@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 4e28fa0eea97bee46a84513043023b56
+guid: e0744e41c7b831747bb6d412b2723b21
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6963386465725371359
-    second: barrel01_0
+      213: 5775605599678879682
+    second: Survivor_0
+  - first:
+      213: 1477727864931859644
+    second: Survivor_1
+  - first:
+      213: -8409859510138960945
+    second: Survivor_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 13
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: barrel01_0
+      name: Survivor_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 13
-        height: 13
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +147,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 12c2dac27e41d5f90800000000000000
-      internalID: -6963386465725371359
+      spriteID: 2c7dd9341b2172050800000000000000
+      internalID: 5775605599678879682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Survivor_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbcb5ffe9a1f18410800000000000000
+      internalID: 1477727864931859644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Survivor_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc30a37355d2a4b80800000000000000
+      internalID: -8409859510138960945
       vertices: []
       indices: 
       edges: []
@@ -161,7 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      barrel01_0: -6963386465725371359
+      Survivor_0: 5775605599678879682
+      Survivor_1: 1477727864931859644
+      Survivor_2: -8409859510138960945
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

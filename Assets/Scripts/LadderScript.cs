@@ -10,53 +10,69 @@ public class LadderScript : MonoBehaviour
     private PlayerInput playerInput;
 
     private float verticalInput;
+    private float lockedX;
 
-    private float horizontalInput;
+    public BoxCollider2D ladderTrigger;
+    public Animator anim;
 
-    public BoxCollider2D col;
-
-
-
-
+    [Header("Ladder Entry Detection")]
+    public Vector2 entrySize = new Vector2(0.5f, 2f);
+    public Vector2 entryOffset = Vector2.zero;
+    public LayerMask playerLayer;
 
     private void Start()
     {
-        col = GetComponent<BoxCollider2D>();
+        ladderTrigger.enabled = false;
+
+        if (anim == null)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null)
+                anim = player.GetComponent<Animator>();
+        }
     }
-
-
-
-
 
     void Update()
     {
+        Collider2D hit = Physics2D.OverlapBox(
+            (Vector2)transform.position + entryOffset,
+            entrySize,
+            0f,
+            playerLayer
+        );
 
-        
-        
-        
-        
-        if (playerOnLadder)
+        ladderTrigger.enabled = (hit != null);
+
+        if (playerOnLadder && hit == null)
         {
-            verticalInput = playerInput.actions["Move"].ReadValue<Vector2>().y;
+            playerOnLadder = false;
+            anim.SetBool("isClimbing", false);
 
-         
+            if (playerRb != null)
+                playerRb.gravityScale = 1f;
 
-          
-
-            // Override gravity while climbing
-            playerRb.gravityScale = 0f;
-
-            // Move vertically
-            playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, verticalInput * climbSpeed);
-
-
-
-
+            return;
         }
 
+        if (playerOnLadder)
+        {
+            Vector2 moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
+            verticalInput = moveInput.y;
 
+            playerRb.position = new Vector2(lockedX, playerRb.position.y);
 
+            playerRb.gravityScale = 0f;
 
+            playerRb.linearVelocity = new Vector2(0f, verticalInput * climbSpeed);
+
+            bool isMoving = Mathf.Abs(verticalInput) > 0.1f;
+
+            anim.SetBool("isClimbing", isMoving);
+
+            Debug.Log("Trigger fired");
+            Debug.Log("Animator reference: " + anim);
+            Debug.Log("Setting isClimbing = " + isMoving);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,9 +80,14 @@ public class LadderScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerOnLadder = true;
-            col.usedByEffector = true;
+
             playerRb = collision.GetComponent<Rigidbody2D>();
             playerInput = collision.GetComponent<PlayerInput>();
+
+            lockedX = playerRb.position.x;
+
+            collision.GetComponent<PlayerController>().isOnLadder = true;
+
         }
     }
 
@@ -76,10 +97,29 @@ public class LadderScript : MonoBehaviour
         {
             playerOnLadder = false;
 
-            col.usedByEffector = false;
-            // Restore normal physics
-            playerRb.gravityScale = 1f;
+            if (playerRb != null)
+                playerRb.gravityScale = 1f;
+
+            anim.SetBool("isClimbing", false);
+
+
+            collision.GetComponent<PlayerController>().isOnLadder = false;
+
+
         }
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube((Vector2)transform.position + entryOffset, entrySize);
+    }
 }
+
+
+
+
+
+
+
 

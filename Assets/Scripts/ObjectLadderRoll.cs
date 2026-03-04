@@ -9,7 +9,7 @@ public class ObjectLadderRoll : MonoBehaviour
     [Header("Ground Check")]
     public Transform ObjectGroundCheck;
     public float groundCheckRadius = 0.1f;
-    public LayerMask groundLayer;
+    public LayerMask ObjectGroundLayer;
 
     private Rigidbody2D rb;
     private Collider2D col;
@@ -28,7 +28,7 @@ public class ObjectLadderRoll : MonoBehaviour
         bool grounded = Physics2D.OverlapCircle(
             ObjectGroundCheck.position,
             groundCheckRadius,
-            groundLayer
+            ObjectGroundLayer
         );
 
         if (grounded)

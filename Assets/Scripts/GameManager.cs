@@ -27,8 +27,10 @@ public class GameManager : MonoBehaviour
 
     private EndLevelScript endlevelScript;
 
+   public PlayerController playerController;
 
-    
+
+
    
 
 
@@ -47,6 +49,9 @@ public class GameManager : MonoBehaviour
 
             EndLevelPopUp.SetActive(true);
 
+
+            playerController.isFrozen = true;
+            playerController.enabled = false;
 
             StartCoroutine("VictoryPopup");
 

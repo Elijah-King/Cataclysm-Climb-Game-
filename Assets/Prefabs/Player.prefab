@@ -422,15 +422,18 @@ MonoBehaviour:
   rb: {fileID: 4377586646981816382}
   groundCheck: {fileID: 2987796898115741570}
   groundCheckRadius: 0.1
-  groundLayer:
+  PlayerGroundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 3072
   attackPoint: {fileID: 3455742339603484883}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
   radius: 0.1
   playerAttackCooldown: 1
+  isFrozen: 0
+  isMoving: 0
+  isOnLadder: 0
 --- !u!114 &6293696266692276348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +669,7 @@ MonoBehaviour:
   ScoreCardSource: {fileID: 0}
   ScoreCardStamp: {fileID: 8300000, guid: 39a1ca913de54e14ea5d6124ac690064, type: 3}
   scoreCardScript: {fileID: 0}
+  playerController: {fileID: 6504753466485223217}
 --- !u!95 &1061247153650250043
 Animator:
   serializedVersion: 7
